@@ -12,8 +12,11 @@ class Formatter {
     const words = string.split(" ")
     const excludedWords = ["the", "a", "an", "but","of","and","for","at","by"]
     return words.map(word => {
-      if(!excludedWords.includes(word) || word === words[0])
-        return Formatter.capitalize(word)
+      if(!excludedWords.includes(word) || word === words[0]){
+        return Formatter.capitalize(word)}
+      else {
+        return word
+      }
     }).join(" ")
   }
 }
