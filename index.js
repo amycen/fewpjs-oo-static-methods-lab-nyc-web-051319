@@ -7,4 +7,13 @@ class Formatter {
   static sanitize(string) {
     return string.replace(/[^A-Za-z0-9-']+/g, '')
   }
+
+  static titleize(string) {
+    const words = string.split(" ")
+    const excludedWords = ["the", "a", "an", "but","of","and","for","at","by"]
+    return words.map(word => {
+      if(!excludedWords.includes(word))
+        Formatter.capitalize(word)
+    }).join(" ")
+  }
 }
